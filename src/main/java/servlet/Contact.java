@@ -19,7 +19,7 @@ public class Contact extends HttpServlet {
 		try {
 			String document = request.getParameter("document");
 
-			if (Boolean.parseBoolean(document) == true) {
+			if (Boolean.parseBoolean(document)) {
 				//			資料請求希望
 				RequestDispatcher dispatcher = request
 						.getRequestDispatcher("../jsp/display.jsp");
@@ -27,14 +27,12 @@ public class Contact extends HttpServlet {
 			} else {
 				//		資料請求無希望
 				RequestDispatcher dispatcher = request
-						.getRequestDispatcher("../jsp/display_add_shiryou.jsp");
+						.getRequestDispatcher("../jsp/display_not_shiryou.jsp");
 				dispatcher.forward(request, response);
 			}
-		}catch(Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
-
-
 
 	}
 
